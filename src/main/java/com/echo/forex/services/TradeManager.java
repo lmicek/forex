@@ -1,5 +1,6 @@
 package com.echo.forex.services;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,16 @@ public class TradeManager {
 	
 	public List<Trade> getAllTradesByTransactionType(Transaction transactionType) {
 		return this.tradeMart.findByTransactionType(transactionType);
+	}
+	
+	public List<Trade> getAllTrades() {
+		return (List<Trade>) this.tradeMart.findAll();
+	}
+	
+	public Trade addNewTrade(Trade nwTrade){
+		nwTrade.setTime(LocalDateTime.now());
+		this.tradeMart.save(nwTrade);
+		return nwTrade;
 	}
 	
 	

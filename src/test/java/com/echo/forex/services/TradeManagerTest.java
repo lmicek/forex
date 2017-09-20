@@ -32,8 +32,8 @@ public class TradeManagerTest {
 	
 	@Before
 	public void initDatabase() {
-		Trade nwBuyTrade = new Trade(CurrencyPairs.USDCAD,1.3031,400,LocalDateTime.now(),Transaction.BUY);
-		Trade nwSellTrade = new Trade(CurrencyPairs.USDCAD,1.3031,400,LocalDateTime.now(),Transaction.SELL);
+		Trade nwBuyTrade = new Trade(CurrencyPairs.USDCAD,1.3031,400,Transaction.BUY);
+		Trade nwSellTrade = new Trade(CurrencyPairs.USDCAD,1.3031,400,Transaction.SELL);
 		tradeRepo.save(nwBuyTrade);
 		tradeRepo.save(nwSellTrade);
 	}

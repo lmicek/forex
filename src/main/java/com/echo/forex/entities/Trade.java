@@ -28,12 +28,11 @@ public class Trade implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Trade(CurrencyPairs currency, double price, int lotSize, LocalDateTime time, Transaction transactionType) {
+	public Trade(CurrencyPairs currency, double price, int lotSize, Transaction transactionType) {
 		super();
 		this.currency = currency;
 		this.price = price;
 		this.lotSize = lotSize;
-		this.time = time;
 		this.transactionType = transactionType;
 	}
 
