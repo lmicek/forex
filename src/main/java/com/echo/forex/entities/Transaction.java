@@ -1,5 +1,5 @@
 package com.echo.forex.entities;
 
-public enum TradingSymbols {
-
+public enum Transaction {
+	BUY,SELL
 }
