@@ -12,7 +12,4 @@ public class App
     	//testing commit
     	//really testing versions
     }
-    public void changing(){
-    	
-    }
 }
