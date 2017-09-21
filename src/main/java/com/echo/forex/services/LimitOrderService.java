@@ -20,11 +20,6 @@ public class LimitOrderService {
 		this.limitOrderMart = lmOrdRef;
 	}
 	
-	public long makeLimitOrder(LimitOrder lmOrder) {
-		this.limitOrderMart.save(lmOrder);
-		return lmOrder.getId();
-	}
-	
 	public List<LimitOrder> getAllLimitOrdersByTransactionType(Transaction transactionType) {
 		return this.limitOrderMart.findByTransactionType(transactionType);
 	}

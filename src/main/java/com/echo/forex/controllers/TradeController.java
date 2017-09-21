@@ -1,6 +1,5 @@
 package com.echo.forex.controllers;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 import org.springframework.http.HttpStatus;
