@@ -26,7 +26,7 @@ public class LimitOrderController {
 	@RequestMapping(path="/placelimitorder",method=RequestMethod.POST,produces=MediaType.APPLICATION_JSON_VALUE)
 	public Object createLimitOrder(@RequestBody LimitOrder nwLmOrder) {
 		this.lmOrdService.addNewLimitOrder(nwLmOrder);
-		return new ResponseEntity<LimitOrder>(nwLmOrder,HttpStatus.CREATED);
+		return new ResponseEntity(nwLmOrder.getId(),HttpStatus.CREATED);
 	}
 	@RequestMapping(path="/completedlimitorders",method=RequestMethod.GET,produces=MediaType.APPLICATION_JSON_VALUE)
 	public Object getCompletedLimitOrders() {

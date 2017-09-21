@@ -44,9 +44,9 @@ public class LimitOrderService {
 		return (LimitOrder) this.limitOrderMart.findById(id);
 	}
 	
-	public LimitOrder addNewLimitOrder(LimitOrder lmOrder){
+	public long addNewLimitOrder(LimitOrder lmOrder){
 		this.limitOrderMart.save(lmOrder);
-		return lmOrder;
+		return lmOrder.getId();
 	}
 	
 	
