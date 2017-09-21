@@ -34,7 +34,7 @@ public class TradeManager {
 	}
 	
 	public Trade addNewTrade(Trade nwTrade){
-		nwTrade.setTime(LocalDateTime.now());
+		nwTrade.setTime(LocalDateTime.now().toString());
 		this.tradeMart.save(nwTrade);
 		return nwTrade;
 	}

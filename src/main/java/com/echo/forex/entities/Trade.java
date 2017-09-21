@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -20,7 +21,7 @@ public class Trade implements Serializable{
 	private CurrencyPairs currency;
 	private double price;
 	private int lotSize;
-	private LocalDateTime time;
+	private String tradeTime;
 	private Transaction transactionType;
 	
 	public Trade() {
@@ -68,12 +69,12 @@ public class Trade implements Serializable{
 		this.lotSize = lotSize;
 	}
 
-	public LocalDateTime getTime() {
-		return time;
+	public String getTime() {
+		return tradeTime;
 	}
 
-	public void setTime(LocalDateTime time) {
-		this.time = time;
+	public void setTime(String time) {
+		this.tradeTime = time;
 	}
 
 	public Transaction getTransactionType() {

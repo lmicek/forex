@@ -38,18 +38,20 @@ public class TradeManagerTest {
 		tradeRepo.save(nwSellTrade);
 	}
 	@Test
-	public void buyTrade() {
+	public void buyTradeTest() {
 		List<Trade> allBuyTrades = tradeRepo.findByTransactionType(Transaction.BUY);
 		Trade rtnTrade = allBuyTrades.get(0);
 		assertThat("Trade should be a buy tranction",Transaction.BUY,equalTo(rtnTrade.getTransactionType()));
 		assertThat("Trade should have a currency pair of USDCAD",CurrencyPairs.USDCAD,equalTo(rtnTrade.getCurrency()));
+		assertThat("Trade should have a lot size of 400",400,equalTo(rtnTrade.getLotSize()));
 	}
 	@Test
-	public void sellTrade() {
+	public void sellTradeTest() {
 		List<Trade> allSellTrades = tradeRepo.findByTransactionType(Transaction.SELL);
 		Trade rtnTrade = allSellTrades.get(0);
 		assertThat("Trade should be a sell tranction",Transaction.SELL,equalTo(rtnTrade.getTransactionType()));
 		assertThat("Trade should have a currency pair of USDCAD",CurrencyPairs.USDCAD,equalTo(rtnTrade.getCurrency()));
+		assertThat("Trade should have a lot size of 400",400,equalTo(rtnTrade.getLotSize()));
 	}
 
 }

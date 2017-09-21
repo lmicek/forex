@@ -78,5 +78,15 @@ public class HomeControllerTest {
 		.and().extract().as(Long.class);
 		assertNotNull(rtnTradeId);
 	}
+	
+	@Test
+	public void addTradeTest(){
+		Trade nwTrade = new Trade(CurrencyPairs.USDCAD,1.2000,1000,Transaction.SELL);
+		Trade rtnTrade = 
+		given().contentType(MediaType.APPLICATION_JSON_VALUE).body(nwTrade).post("/addtrades")
+		.then().statusCode(HttpStatus.CREATED.value())
+		.and().extract().as(Trade.class);
+		assertEquals(nwTrade.getLotSize(),rtnTrade.getLotSize());
+	}
 
 }
