@@ -1,11 +1,8 @@
 package com.echo.forex.controllers;
 
-import static org.junit.Assert.*;
-
-import java.time.LocalDateTime;
-import java.util.List;
-
-import javax.print.attribute.standard.DateTimeAtCreation;
+import static io.restassured.RestAssured.given;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -23,10 +20,6 @@ import com.echo.forex.entities.Transaction;
 import com.echo.forex.repositories.TradesRepo;
 
 import io.restassured.response.Response;
-
-import static org.hamcrest.core.IsEqual.equalTo;
-
-import static io.restassured.RestAssured.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment=WebEnvironment.DEFINED_PORT)

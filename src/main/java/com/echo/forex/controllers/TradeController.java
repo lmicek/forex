@@ -15,7 +15,7 @@ import com.echo.forex.entities.Trade;
 import com.echo.forex.entities.Transaction;
 import com.echo.forex.services.TradeManager;
 
-@RestController
+@RestController(value="tradeController")
 public class TradeController {
 
 	private final TradeManager tradeMgr;

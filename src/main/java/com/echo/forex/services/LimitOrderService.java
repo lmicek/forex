@@ -10,7 +10,7 @@ import com.echo.forex.entities.LimitOrder;
 import com.echo.forex.entities.Transaction;
 import com.echo.forex.repositories.LimitOrderRepo;
 
-@Service
+@Service(value="limitOrderService")
 public class LimitOrderService {
 
 	private LimitOrderRepo limitOrderMart;
@@ -36,12 +36,14 @@ public class LimitOrderService {
 		return (List<LimitOrder>) this.limitOrderMart.findByIsCompleted(false);
 	}
 	
-	public List<LimitOrder> getAllLimitOrdersByCurrencyPair(CurrencyPairs currency) {
-		return (List<LimitOrder>) this.limitOrderMart.findByCurrencyPair(currency);
+	public List<LimitOrder> getAllLimitOrdersByCurrencyPair(CurrencyPairs currencypair) {
+		return (List<LimitOrder>) this.limitOrderMart.findByLimitOrderCurrPair(currencypair);
 	}
 	
 	public LimitOrder getLimitOrderById(long id) {
-		return (LimitOrder) this.limitOrderMart.findById(id);
+		
+		List<LimitOrder> limitOrderList = (List<LimitOrder>) this.limitOrderMart.findById(id);
+		return limitOrderList.get(0); 
 	}
 	
 	public long addNewLimitOrder(LimitOrder lmOrder){

@@ -10,7 +10,7 @@ import com.echo.forex.entities.Transaction;
 
 public interface LimitOrderRepo extends CrudRepository<LimitOrder, Long> {
 	List<LimitOrder> findByTransactionType(Transaction transactionType);
-	List<LimitOrder> findByCurrencyPair(CurrencyPairs currency);
+	List<LimitOrder> findByLimitOrderCurrPair(CurrencyPairs limitOrderCurrPair);
 	List<LimitOrder> findById(long id);
 	List<LimitOrder> findByIsCompleted(boolean isCompleted);
 	

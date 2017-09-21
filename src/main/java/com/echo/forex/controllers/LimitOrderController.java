@@ -7,10 +7,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.echo.forex.entities.LimitOrder;
 import com.echo.forex.services.LimitOrderService;
+import com.fasterxml.jackson.core.sym.Name;
 
+@RestController(value="limitOrderController")
 public class LimitOrderController {
 	
 	private final LimitOrderService lmOrdService;
