@@ -30,7 +30,7 @@ import static io.restassured.RestAssured.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment=WebEnvironment.DEFINED_PORT)
-public class HomeControllerTest {
+public class TradeControllerTest {
 
 	@Autowired
 	private TradesRepo tradeRepo;

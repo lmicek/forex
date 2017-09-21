@@ -17,11 +17,11 @@ import com.echo.forex.entities.Transaction;
 import com.echo.forex.services.TradeManager;
 
 @RestController
-public class HomeController {
+public class TradeController {
 
 	private final TradeManager tradeMgr;
 
-	public HomeController(TradeManager tdManger) {
+	public TradeController(TradeManager tdManger) {
 		this.tradeMgr = tdManger;
 	}
 	
