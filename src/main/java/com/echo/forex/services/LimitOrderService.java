@@ -58,6 +58,4 @@ public class LimitOrderService {
 		} 
 		return "The order status is " + changeLmtOrder.getOrderState();
 	}
-	
-	
 }
