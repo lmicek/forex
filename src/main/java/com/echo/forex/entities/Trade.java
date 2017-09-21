@@ -1,16 +1,14 @@
 package com.echo.forex.entities;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-@Entity
+@Entity(name = "trade")
 public class Trade implements Serializable{
 	private static final long serialVersionUID = 8062312846871472399L;
 	
@@ -18,7 +16,7 @@ public class Trade implements Serializable{
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
 	@NotNull
-	private CurrencyPairs currency;
+	private CurrencyPairs currencyPair;
 	private double price;
 	private int lotSize;
 	private String tradeTime;
@@ -29,9 +27,9 @@ public class Trade implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Trade(CurrencyPairs currency, double price, int lotSize, Transaction transactionType) {
+	public Trade(CurrencyPairs tradeCurrency, double price, int lotSize, Transaction transactionType) {
 		super();
-		this.currency = currency;
+		this.currencyPair = tradeCurrency;
 		this.price = price;
 		this.lotSize = lotSize;
 		this.transactionType = transactionType;
@@ -46,11 +44,11 @@ public class Trade implements Serializable{
 	}
 
 	public CurrencyPairs getCurrency() {
-		return currency;
+		return currencyPair;
 	}
 
-	public void setCurrency(CurrencyPairs currency) {
-		this.currency = currency;
+	public void setCurrency(CurrencyPairs tradeCurrency) {
+		this.currencyPair = tradeCurrency;
 	}
 
 	public double getPrice() {

@@ -10,7 +10,7 @@ import com.echo.forex.entities.Trade;
 import com.echo.forex.entities.Transaction;
 import com.echo.forex.repositories.TradesRepo;
 
-@Service
+@Service(value="tradeService")
 public class TradeManager {
 
 	private TradesRepo tradeMart;

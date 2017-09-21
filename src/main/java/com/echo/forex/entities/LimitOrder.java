@@ -2,11 +2,13 @@ package com.echo.forex.entities;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
+@Entity(name="limitorder")
 public class LimitOrder implements Serializable{
 	private static final long serialVersionUID = 8062312846871472399L;
 	
@@ -14,7 +16,7 @@ public class LimitOrder implements Serializable{
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
 	@NotNull
-	private CurrencyPairs currency;
+	private CurrencyPairs limitOrderCurrPair;
 	private double price;
 	private int lotSize;
 	private Transaction transactionType;
@@ -26,10 +28,10 @@ public class LimitOrder implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 
-	public LimitOrder(CurrencyPairs currency, double price, int lotSize, Transaction transactionType,
+	public LimitOrder(CurrencyPairs currencypair, double price, int lotSize, Transaction transactionType,
 			OrderStatus orderState) {
 		super();
-		this.currency = currency;
+		this.limitOrderCurrPair = currencypair;
 		this.price = price;
 		this.lotSize = lotSize;
 		this.transactionType = transactionType;
@@ -43,10 +45,10 @@ public class LimitOrder implements Serializable{
 		this.id = id;
 	}
 	public CurrencyPairs getCurrency() {
-		return currency;
+		return limitOrderCurrPair;
 	}
-	public void setCurrency(CurrencyPairs currency) {
-		this.currency = currency;
+	public void setCurrency(CurrencyPairs loCurrencyP) {
+		this.limitOrderCurrPair = loCurrencyP;
 	}
 	public double getPrice() {
 		return price;
