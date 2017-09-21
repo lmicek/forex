@@ -20,7 +20,7 @@ public class LimitOrder implements Serializable{
 	private double price;
 	private int lotSize;
 	private Transaction transactionType;
-	private boolean isCompleted;
+	private OrderStatus orderState;
 	
 	
 	public LimitOrder() {
@@ -28,14 +28,14 @@ public class LimitOrder implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 
-	public LimitOrder(CurrencyPairs currencypair, double price, int lotSize, Transaction transactionType,
-			boolean isCompleted) {
+	public LimitOrder(CurrencyPairs currency, double price, int lotSize, Transaction transactionType,
+			OrderStatus orderState) {
 		super();
 		this.limitOrderCurrPair = currencypair;
 		this.price = price;
 		this.lotSize = lotSize;
 		this.transactionType = transactionType;
-		this.isCompleted = isCompleted;
+		this.orderState = orderState;
 	}
 	
 	public long getId() {
@@ -68,14 +68,13 @@ public class LimitOrder implements Serializable{
 	public void setTransactionType(Transaction transactionType) {
 		this.transactionType = transactionType;
 	}
-	public boolean isCompleted() {
-		return isCompleted;
+
+	public OrderStatus getOrderState() {
+		return orderState;
 	}
-	public void setCompleted(boolean isCompleted) {
-		this.isCompleted = isCompleted;
+
+	public void setOrderState(OrderStatus orderState) {
+		this.orderState = orderState;
 	}
-	
-	
-	
 
 }
