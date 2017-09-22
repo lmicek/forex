@@ -43,7 +43,7 @@ public class LimitOrderController {
 	public Object getLimitOrderById(@PathVariable long id) {
 		return new ResponseEntity(lmOrdService.getLimitOrderById(id),HttpStatus.OK);
 	}
-	@RequestMapping(path="/cancellimitorder/{id}",method=RequestMethod.POST,produces=MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(path="/cancellimitorder/{id}",method=RequestMethod.GET,produces=MediaType.APPLICATION_JSON_VALUE)
 	public Object cancelLimitOrderById(@PathVariable long id) {
 		return new ResponseEntity(lmOrdService.cancelLimitOrderById(id),HttpStatus.OK);
 	}
