@@ -30,11 +30,11 @@ public class LimitOrderService {
 	}
 	
 	public List<LimitOrder> getAllCompletedLimitOrders() {
-		return (List<LimitOrder>) this.limitOrderMart.findByIsCompleted(true);
+		return (List<LimitOrder>) this.limitOrderMart.findByOrderState(OrderStatus.Closed);
 	}
 	
 	public List<LimitOrder> getAllInCompleteLimitOrders() {
-		return (List<LimitOrder>) this.limitOrderMart.findByIsCompleted(false);
+		return (List<LimitOrder>) this.limitOrderMart.findByOrderState(OrderStatus.Open);
 	}
 	
 	public List<LimitOrder> getAllLimitOrdersByCurrencyPair(CurrencyPairs currencypair) {
