@@ -41,6 +41,13 @@ public class LimitOrderServiceTest {
 		long id = limitOrderService.addNewLimitOrder(nwerlmOrder);
 		assertNotNull(id);
 	}
+	@Test
+	public void cancelLimitOrderByIdTest() {
+		LimitOrder nwerlmOrder = new LimitOrder(CurrencyPairs.USDCAD,1.2000,1000,Transaction.BUY,OrderStatus.Open);
+		limitOrderRepo.save(nwerlmOrder);
+		String rtnMessage = limitOrderService.cancelLimitOrderById(nwerlmOrder.getId());
+		assertEquals("The order status is Canceled", rtnMessage);
+	}
 	
 
 }
